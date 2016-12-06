@@ -1,7 +1,8 @@
-# This fork:
+# This fork mainly:
 
  - Removes the usage of the web API, which doesn't exist anyways
  - Fixes the bad offline fallback of the extension to reading the whole document, including navigational links and such
+ - Check the commits for more!
 
 -----
 

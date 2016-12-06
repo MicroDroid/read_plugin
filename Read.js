@@ -62,6 +62,7 @@
 		children.wrap(calculator);
 		width = children.parent().width();
 		children.unwrap();
+		console.log('width:', width);
 		return width;
 	};
 
@@ -173,11 +174,14 @@
 			var $before = this._options.element.find('.__read_before').html(before).css("opacity","0");
 			var $letter = this._options.element.find('.__read_letter').html(letter).css("opacity","0");
 
-			var calc = $before.textWidth() + Math.round( $letter.textWidth() / 2 );
+			// START CUSTOM CODE FOR GREEK
+			var calc = 0;
+			// END CUSTOM CODE FOR GREEK
 
 			if (!this._currentWord.val.match(whiteSpace)){
 				this._displayElement.html(this._currentWord.val);
 				this._displayElement.css("margin-left", -calc);
+				console.log( 'actual margin:', this._displayElement.css('margin-left') );
 			}
 		}
 
