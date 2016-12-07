@@ -18,7 +18,14 @@
                 var text = '';
                 var elements = $('p, li, h1, h2, h3, h4, h5, h6, span, pre');
                 elements.each(function(index, element) {
-                    var elementText = element.innerText.trim();
+                	element = $(element);
+                    var elementText = element
+                    	.clone()
+                    	.children('sup')
+                    	.remove()
+                    	.end()
+                    	.text()
+                    	.trim();
                     if (elementText.length >= 60)
                         if (!(element.tagName === 'LI' && elementText.includes('    ')))
                             text += " " + elementText;
